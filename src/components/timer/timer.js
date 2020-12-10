@@ -1,6 +1,9 @@
 // @flow
 import React, { Component } from 'react';
 import parseTime from '../../helpers/parse-time';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faTimes, faRedo } from '@fortawesome/free-solid-svg-icons';
+import './timer.scss';
 
 type Props = {
     title: string
@@ -58,11 +61,14 @@ class TimerComponent extends Component<Props, State> {
     render() {
         
         return (
-            <div className="whole-wrapper">
-                <span>{this.props.title}</span>
-                <button onClick={() => this.beginTimer()}>start</button>
-                <button onClick={() => this.endTimer()}>stop</button>
-                {parseTime(this.state.currentTime)}
+            <div className="timer-wrapper">
+                <span className="timer-title">{this.props.title}</span>
+
+                
+                <button onClick={() => this.beginTimer()} className="start-icon"><FontAwesomeIcon icon={faCheck} /></button>
+                <button onClick={() => this.endTimer()} className="stop-icon"><FontAwesomeIcon icon={faTimes} /></button>
+                <button onClick={() => this.resetTimer()} className="reset-icon"><FontAwesomeIcon icon={faRedo} /></button>
+                <p className="timer-time">{parseTime(this.state.currentTime)}</p>
             </div>
         );
     }
