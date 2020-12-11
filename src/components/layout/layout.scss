@@ -11,7 +11,7 @@
         width: 100%;
         
         .timer-wrapper {
-            font-size: 48px;
+            font-size: 72px;
             justify-content: center;
             flex-direction: column-reverse;
             width: 100%;
@@ -23,6 +23,13 @@
             .timer-time {
                 margin-left: 0;
                 margin-bottom: 0;
+                margin-top: 10px;
+            }
+
+            .button-row {
+                height: 40px;
+                position: relative;
+                bottom: 50px;
             }
         }
         

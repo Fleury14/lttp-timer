@@ -65,7 +65,7 @@ class TimerComponent extends Component<Props, State> {
         return (
             <div className="timer-wrapper">
                 <span className="timer-title">{title}</span>
-                <div>
+                <div className="button-row">
                     <button onClick={() => this.beginTimer()} className="start-icon"><FontAwesomeIcon icon={faCheck} /></button>
                     <button onClick={() => this.endTimer()} className="stop-icon"><FontAwesomeIcon icon={faTimes} /></button>
                     <button onClick={() => this.resetTimer()} className="reset-icon"><FontAwesomeIcon icon={faRedo} /></button>
