@@ -30,6 +30,7 @@ class TimerComponent extends Component<Props, State> {
 
 
     beginTimer() {
+        if (this.state.timerActive) return;
         const startDate = this.state.pauseTime === 0 ? Date.now() : Date.now() - this.state.pauseTime;
         this.interval = setInterval(() => {
             this.setState({
