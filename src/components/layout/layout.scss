@@ -1,0 +1,29 @@
+.layout-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 870px;
+
+    div {
+        padding: 0px 10px;
+    }
+
+    .main-timer {
+        width: 100%;
+        
+        .timer-wrapper {
+            font-size: 48px;
+            justify-content: center;
+            flex-direction: column-reverse;
+
+            .timer-title {
+                width: 0px;
+            }
+
+            .timer-time {
+                margin-left: 0;
+                margin-bottom: 0;
+            }
+        }
+        
+    }
+}

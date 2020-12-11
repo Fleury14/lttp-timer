@@ -6,7 +6,8 @@ import { faCheck, faTimes, faRedo } from '@fortawesome/free-solid-svg-icons';
 import './timer.scss';
 
 type Props = {
-    title: string
+    title: string,
+    main: boolean
 }
 
 type State = {
@@ -59,15 +60,15 @@ class TimerComponent extends Component<Props, State> {
     }
 
     render() {
-        
+        const { title, main } = this.props;
         return (
             <div className="timer-wrapper">
-                <span className="timer-title">{this.props.title}</span>
-
-                
-                <button onClick={() => this.beginTimer()} className="start-icon"><FontAwesomeIcon icon={faCheck} /></button>
-                <button onClick={() => this.endTimer()} className="stop-icon"><FontAwesomeIcon icon={faTimes} /></button>
-                <button onClick={() => this.resetTimer()} className="reset-icon"><FontAwesomeIcon icon={faRedo} /></button>
+                <span className="timer-title">{title}</span>
+                <div>
+                    <button onClick={() => this.beginTimer()} className="start-icon"><FontAwesomeIcon icon={faCheck} /></button>
+                    <button onClick={() => this.endTimer()} className="stop-icon"><FontAwesomeIcon icon={faTimes} /></button>
+                    <button onClick={() => this.resetTimer()} className="reset-icon"><FontAwesomeIcon icon={faRedo} /></button>
+                </div>
                 <p className="timer-time">{parseTime(this.state.currentTime)}</p>
             </div>
         );
